@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
+import OwnerList from './owner/OwnerList'
 
 
 class ApplicationViews extends Component {
@@ -27,10 +28,16 @@ class ApplicationViews extends Component {
         { id: 6, name: "Checkers" }
     ]
 
+    ownersFromAPI = [
+        { id: 1, name: "Owner One", phoneNumber: "555-999-1234" },
+        { id: 2, name: "Owner Two", phoneNumber: "555-222-1234" }
+    ]
+
     state = {
         employees: this.employeesFromAPI,
         locations: this.locationsFromAPI,
-        animals: this.animalsFromAPI
+        animals: this.animalsFromAPI,
+        owners: this.ownersFromAPI
     }
 
     render() {
@@ -45,6 +52,9 @@ class ApplicationViews extends Component {
                 <Route path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
                 }} />
+                <Route path="/owners" render={(props) => {
+                    return <OwnerList owners={this.state.owners} />
+                }} />
             </React.Fragment>
         )
     }
@@ -52,4 +62,4 @@ class ApplicationViews extends Component {
 
 export default ApplicationViews
 
-// Locations is kind of the homepage like messages/friends
+// In this scenario, Locations is kind of the landing - homepage like messages/friends
