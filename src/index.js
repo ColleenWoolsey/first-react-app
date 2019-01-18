@@ -1,17 +1,12 @@
-import Kennel from "./components/Kennel"
-import ReactDOM from 'react-dom';
-import React, { Component } from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from "react-router-dom"
+import Kennel from './components/Kennel'
 
-// class Kennel extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <h3>Student Kennels</h3>
-//                 <h4>Nashville North Location</h4>
-//                 <h5>500 Puppy Way</h5>
-//             </div>
-//         );
-//     }
-// }
+import './index.css'
 
-ReactDOM.render(<Kennel />, document.querySelector("#root"));
+ReactDOM.render(
+    <Router>
+        <Kennel />
+    </Router>
+    , document.getElementById('root'))
