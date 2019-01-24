@@ -48,3 +48,9 @@ If you haven't created the owners array in your state yet, please go ahead and c
 Create a link in your navigation bar that links to /owners path.
 Create a route for /owners that renders the <OwnerList> component and sends the corresponding state property.
 Add the code in <OwnerList> to display all the items in the array.
+
+PRACTICE CHAPTER FOUR - POPULATING REACT COMONENT STATE FROM AN API
+
+Refactor your code to populate the locations and the owners from your API.
+
+Once you have everything rendering, remove the empty arrays you defined in the state object so you can see how the React lifecycle works. What happened when you removed them?
