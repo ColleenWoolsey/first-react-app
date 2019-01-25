@@ -8,6 +8,7 @@ Create two locations (you can use separate section elements if you like): Nashvi
 
 Then put the LocationList component in the JSX for Kennel.
 
+
 CHAPTER TWO - STATE AND PROPS - EXERCISE ONE - Displaying Locations:
 
 Update your application so that the array of locations is passed from the Kennel state to the props of LocationList. Then use the map() method to display all location names.
@@ -41,6 +42,7 @@ state = {
 You create the intersection table and assign each animal to an owner.
 Your task is to update the AnimalList component to also display the name of the animal's owner(s). Keep in mind that the animal may have more than one owner. You'll need to pass multiple collections - not just animals - to the component in order to accomplish this.
 
+
 CHAPTER THREE - URL ROUTING - EXERCISE ONE - OWNER'S LIST
 
 If you haven't created the owners array in your state yet, please go ahead and create it now, and populate it with 4 owners. Each owners should have the id, phoneNumber, and name properties.
@@ -49,8 +51,18 @@ Create a link in your navigation bar that links to /owners path.
 Create a route for /owners that renders the <OwnerList> component and sends the corresponding state property.
 Add the code in <OwnerList> to display all the items in the array.
 
+
 PRACTICE CHAPTER FOUR - POPULATING REACT COMONENT STATE FROM AN API
 
 Refactor your code to populate the locations and the owners from your API.
 
 Once you have everything rendering, remove the empty arrays you defined in the state object so you can see how the React lifecycle works. What happened when you removed them?
+
+
+CHAPTER 5 - PASSING FUNCTIONALITY AS PROPERTIES
+
+PRACTICE: Fire Employees
+Add the same functionality to the EmployeeList component so that employees can be fired!
+
+PRACTICE: Remove Owners
+Add the same functionality to the OwnerList for when they decide they no longer want to be a customer.
