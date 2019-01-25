@@ -4,6 +4,10 @@ import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
 import OwnerList from './owner/OwnerList'
+import AnimalManager from "../modules/AnimalManager"
+import LocationManager from "../modules/LocationManager"
+import EmployeeManager from "../modules/EmployeeManager"
+import OwnerManager from "../modules/OwnerManager"
 export default class ApplicationViews extends Component {
 
     state = {
@@ -14,24 +18,41 @@ export default class ApplicationViews extends Component {
     }
 
     componentDidMount() {
-        const newState = {}
+        // Example code. Make this fit into how you have written yours.
+        AnimalManager.getAll()
+        .then(allAnimals => {
+          this.setState({
+            animals: allAnimals
+          });
+        });
     
-        fetch("http://localhost:5002/animals")
-            .then(r => r.json())
-            .then(animals => newState.animals = animals)
-            .then(() => fetch("http://localhost:5002/employees")
-            .then(r => r.json()))
-            .then(employees => newState.employees = employees)
-            .then(() => fetch("http://localhost:5002/locations")
-            .then(r => r.json()))
-            .then(locations => newState.locations = locations)
-            .then(() => fetch("http://localhost:5002/owners")
-            .then(r => r.json()))
-            .then(owners => newState.owners = owners)
-            .then(() => this.setState(newState))
-    }
+        LocationManager.getAll().then(allLocations => {
+          this.setState({
+            locations: allLocations
+          });
+        });
+    
+        EmployeeManager.getAll().then(allEmployees => {
+          this.setState({
+            employees: allEmployees
+          });
+        });
+    
+        OwnerManager.getAll().then(allOwners => {
+          this.setState({
+            owners: allOwners
+          });
+        });
+      }
 
-// Add the function above render - Keep State at top
+    //   deleteAnimal = (id) => {
+    //     return AnimalManager.removeAndList(id)
+    //     .then(animals => this.setState({
+    //         animals: animals
+    //       })
+    //     )
+    //   }
+
     deleteAnimal = id => {
         return fetch(`http://localhost:5002/animals/${id}`, {
             method: "DELETE"
@@ -99,3 +120,21 @@ export default class ApplicationViews extends Component {
         )
     }
 }
+
+// componentDidMount() {
+    //     const newState = {}
+    
+    //     fetch("http://localhost:5002/animals")
+    //         .then(r => r.json())
+    //         .then(animals => newState.animals = animals)
+    //         .then(() => fetch("http://localhost:5002/employees")
+    //         .then(r => r.json()))
+    //         .then(employees => newState.employees = employees)
+    //         .then(() => fetch("http://localhost:5002/locations")
+    //         .then(r => r.json()))
+    //         .then(locations => newState.locations = locations)
+    //         .then(() => fetch("http://localhost:5002/owners")
+    //         .then(r => r.json()))
+    //         .then(owners => newState.owners = owners)
+    //         .then(() => this.setState(newState))
+    // }
