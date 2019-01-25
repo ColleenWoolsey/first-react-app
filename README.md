@@ -66,3 +66,23 @@ Add the same functionality to the EmployeeList component so that employees can b
 
 PRACTICE: Remove Owners
 Add the same functionality to the OwnerList for when they decide they no longer want to be a customer.
+
+
+CHAPTER 6 - USING MODULES IN REACT
+
+PRACTICE: All Resource Managers
+Create a manager file in the modules directory for each of your resources.
+
+Animals
+Locations
+Employees
+Owners
+
+Add the get() and all() methods to each one, changing the URL path in each one to get the corresponding resource type. Then refactor the ApplicationViews component to import all of them and use all of them when querying your data.
+
+
+CHAPTER 7 - DYNAMIC ROUTING
+
+PRACTICE: All the Details
+
+implement dynamic routing for all of the other resources that you are displaying in your application.

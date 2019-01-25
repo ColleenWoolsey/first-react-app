@@ -9,7 +9,7 @@ export default {
     return fetch(`${remoteURL}/animals`)
     .then(e => e.json())
   },
-   deleteAnimal(id) {
+  removeAndList(id) {
         return fetch(`http://localhost:5002/animals/${id}`, {
             method: "DELETE"
         })

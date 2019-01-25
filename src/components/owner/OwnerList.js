@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 
-class OwnerList extends Component {
+export default class OwnerList extends Component {
     render() {
         return (
             <section className="owners">
@@ -11,6 +12,9 @@ class OwnerList extends Component {
                         <div className="card-body">
                             <h5 className="card-title">
                                 {owner.name}
+                                <Link className="nav-link" to={`/owners/${owner.id}`}>
+                                Details
+                                </Link>
                                 <a href="#"
                                     onClick={() => this.props.deleteOwner(owner.id)}
                                     className="card-link">Delete</a>
@@ -23,5 +27,3 @@ class OwnerList extends Component {
         )
     }
 }
-
-export default OwnerList
